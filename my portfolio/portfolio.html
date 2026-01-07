@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanishka Madushan | Full-Stack Expert & ICT Educator</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.1/index.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700;800&display=swap');
+        
+        body { 
+            background-color: #050505; color: #fff; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            overflow-x: hidden; scroll-behavior: smooth;
+        }
+
+        /* Modern Glassmorphism Styles */
+        .glass-ios {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .glass-ios:hover {
+            transform: translateY(-10px);
+            background: rgba(0, 112, 243, 0.05);
+            border-color: #00d4ff;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .glow-text {
+            background: linear-gradient(90deg, #00d4ff, #0070f3, #7000ff, #00d4ff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine { to { background-position: 200% center; } }
+
+        .floating { animation: floating 3s ease-in-out infinite; }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .bg-glow {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(0, 112, 243, 0.12) 0%, transparent 50%);
+            pointer-events: none; z-index: -1;
+        }
+
+        /* Responsive Nav Mobile */
+        #nav-menu.active { display: flex; }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+
+    <header class="fixed w-full z-50 top-6 px-4 md:px-10">
+        <nav class="max-w-6xl mx-auto glass-ios px-8 py-5 flex justify-between items-center border-white/5">
+            <div class="text-2xl font-black tracking-tighter glow-text">MADUSHAN.</div>
+            
+            <ul class="hidden md:flex gap-10 text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-500">
+                <li><a href="#home" class="hover:text-blue-400 transition">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-400 transition">About</a></li>
+                <li><a href="#projects" class="hover:text-blue-400 transition">Projects</a></li>
+                <li><a href="#tuition" class="hover:text-blue-400 transition">Tuition</a></li>
+                <li><a href="#contact" class="hover:text-blue-400 transition text-blue-500">Contact</a></li>
+            </ul>
+
+            <button class="md:hidden text-white" onclick="document.getElementById('nav-menu').classList.toggle('active')">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="nav-menu" class="hidden flex-col mt-2 glass-ios p-6 md:hidden text-center gap-4 text-[10px] uppercase font-bold tracking-widest">
+            <a href="#home" onclick="this.parentElement.classList.remove('active')">Home</a>
+            <a href="#about" onclick="this.parentElement.classList.remove('active')">About</a>
+            <a href="#projects" onclick="this.parentElement.classList.remove('active')">Projects</a>
+            <a href="#tuition" onclick="this.parentElement.classList.remove('active')">Tuition</a>
+            <a href="#contact" onclick="this.parentElement.classList.remove('active')">Contact</a>
+        </div>
+    </header>
+
+    <section id="home" class="h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
+        <div class="mb-6 px-6 py-2 glass-ios border-blue-500/20 text-[10px] font-black uppercase tracking-[0.5em] text-blue-400 floating" data-aos="fade-down">
+            Software Solutions & ICT Education
+        </div>
+        <h1 class="text-6xl md:text-[110px] font-black mb-8 leading-none tracking-tighter" data-aos="zoom-out" data-aos-duration="1500">
+            Kanishka <br><span class="glow-text italic">Madushan</span>
+        </h1>
+        <p class="max-w-2xl text-zinc-500 text-lg md:text-xl font-light mb-12 italic" data-aos="fade-up" data-aos-delay="400">
+            Web • Mobile • Software Solutions. Delivering excellence with 5 years of experience.
+        </p>
+        <div class="flex flex-wrap justify-center gap-6" data-aos="fade-up" data-aos-delay="600">
+            <a href="#projects" class="bg-blue-600 px-12 py-5 rounded-full font-black text-[11px] uppercase tracking-widest hover:bg-blue-500 hover:scale-110 transition-all duration-500 shadow-lg shadow-blue-500/20">View Showcase</a>
+            <a href="#contact" class="glass-ios px-12 py-5 border-white/10 font-black text-[11px] uppercase tracking-widest hover:bg-white/5 transition">Hire Me</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-40 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="relative" data-aos="fade-right">
+                <div class="absolute -inset-10 bg-blue-600/10 rounded-full blur-[100px] animate-pulse"></div>
+                <img src="C:\Users\Madushan\Documents\my portfolio\my pic.jpg" class="relative rounded-[40px] glass-ios border-white/5 grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl h-[500px] w-full object-cover">
+            </div>
+            <div data-aos="fade-left">
+                <h2 class="text-5xl md:text-7xl font-black mb-8 italic">Who is <span class="glow-text">Madushan?</span></h2>
+                <p class="text-zinc-400 text-xl leading-relaxed mb-10 font-light italic">
+                    I am Kanishka Madushan, a professional Software Developer and ICT Educator with 5 years of field experience. 
+        I specialize in crafting high-end **Web Designs, Mobile Applications, and Enterprise Software Solutions** tailored to solve complex business problems. Beyond development, I am a passionate **ICT Tutor**, 
+        dedicated to empowering the next generation with cutting-edge technical knowledge. 
+        Combining my practical expertise at age 21, I bridge the gap between innovation and education to build the digital future.
+                </p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="p-8 glass-ios text-center"><h4 class="text-4xl font-black glow-text">05</h4><p class="text-[9px] text-zinc-500 font-black uppercase tracking-widest mt-2">Years Exp</p></div>
+                    <div class="p-8 glass-ios text-center"><h4 class="text-4xl font-black glow-text">21</h4><p class="text-[9px] text-zinc-500 font-black uppercase tracking-widest mt-2">Age</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-40 px-6 bg-[#030303]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24" data-aos="fade-up">
+                <h2 class="text-6xl md:text-8xl font-black italic tracking-tighter">Selected <span class="glow-text">Works.</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-ios p-4 group" data-aos="zoom-in-up">
+                    <div class="overflow-hidden rounded-2xl h-64">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold italic mb-2">Web Application</h4>
+                        <p class="text-xs text-blue-500 font-black uppercase tracking-widest">Digital Platform</p>
+                    </div>
+                </div>
+                <div class="glass-ios p-4 group" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div class="overflow-hidden rounded-2xl h-64">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold italic mb-2">Mobile Interface</h4>
+                        <p class="text-xs text-blue-500 font-black uppercase tracking-widest">UI/UX Solutions</p>
+                    </div>
+                </div>
+                <div class="glass-ios p-4 group" data-aos="zoom-in-up" data-aos-delay="400">
+                    <div class="overflow-hidden rounded-2xl h-64">
+                        <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold italic mb-2">System Design</h4>
+                        <p class="text-xs text-blue-500 font-black uppercase tracking-widest">Enterprise Software</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tuition" class="py-40 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-center text-6xl font-black mb-24 italic" data-aos="fade-up">ICT <span class="glow-text">Tution</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="p-12 glass-ios relative group" data-aos="fade-right">
+                    <div class="absolute top-0 right-0 p-8 text-5xl opacity-10"><i class="fas fa-graduation-cap"></i></div>
+                    <h3 class="text-4xl font-black mb-6 italic text-blue-400">O/L ICT</h3>
+                    <p class="text-zinc-500 text-lg font-light leading-relaxed italic">Theory, Python Programming සහ පසුගිය ප්‍රශ්න පත්‍ර සාකච්ඡාව ඉතා සරල මට්ටමේ සිට.</p>
+                </div>
+                <div class="p-12 glass-ios relative group" data-aos="fade-left">
+                    <div class="absolute top-0 right-0 p-8 text-5xl opacity-10"><i class="fas fa-laptop-code"></i></div>
+                    <h3 class="text-4xl font-black mb-6 italic text-purple-400">A/L ICT</h3>
+                    <p class="text-zinc-500 text-lg font-light leading-relaxed italic">Networking, Database, C Programming සහ සම්පූර්ණ විෂය නිර්දේශය ගැඹුරින් සාකච්ඡා කෙරේ.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="py-40 px-6 bg-[#050505]">
+        <div class="max-w-4xl mx-auto glass-ios p-10 md:p-20 relative overflow-hidden" data-aos="zoom-in">
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-blue-600/20 rounded-full blur-[100px]"></div>
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-black italic mb-4 uppercase">NEXTGEN | ICT <span class="glow-text">Register</span></h2>
+                <p class="text-zinc-500 font-light italic">2026 පන්ති සඳහා ලියාපදිංචිය. පහත පෝරමය පුරවන්න.</p>
+            </div>
+
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                <input type="hidden" name="access_key" value="0a8a7b9e-e79b-4d38-813c-b46f3c294e2b">
+                <input type="hidden" name="from_name" value="ICT Registration System">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label class="text-[10px] uppercase font-black text-zinc-500 ml-4">Full Name</label>
+                        <input type="text" name="student_name" placeholder="සිසුවාගේ නම" required class="w-full glass-ios p-5 outline-none focus:border-blue-500 transition-all font-bold bg-transparent">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-[10px] uppercase font-black text-zinc-500 ml-4">WhatsApp Number</label>
+                        <input type="tel" name="phone" placeholder="දුරකථන අංකය" required class="w-full glass-ios p-5 outline-none focus:border-blue-500 transition-all font-bold bg-transparent">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label class="text-[10px] uppercase font-black text-zinc-500 ml-4">Grade / ශ්‍රේණිය</label>
+                        <select name="grade" required class="w-full glass-ios p-5 outline-none focus:border-blue-500 transition-all font-bold bg-[#0a0a0a] text-zinc-400">
+                            <option value="" disabled selected>ශ්‍රේණිය තෝරන්න</option>
+                            <option value="Grade 10">Grade 10</option>
+                            <option value="Grade 11">Grade 11 (O/L)</option>
+                            <option value="Grade 12">Grade 12 (A/L)</option>
+                            <option value="Grade 13">Grade 13 (A/L)</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-[10px] uppercase font-black text-zinc-500 ml-4">Course</label>
+                        <div class="flex gap-4 items-center h-full ml-4 font-bold">
+                            <label><input type="radio" name="course" value="OL_ICT" class="mr-2 accent-blue-500"> O/L</label>
+                            <label><input type="radio" name="course" value="AL_ICT" class="mr-2 accent-blue-500"> A/L</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-blue-600 py-6 rounded-full font-black text-xs uppercase tracking-[0.5em] hover:bg-white hover:text-black transition-all duration-700 shadow-xl">Register Now</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact" class="py-40 px-6 bg-[#020202]">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-7xl font-black mb-16 italic" data-aos="zoom-in">Let's <span class="glow-text">Create.</span></h2>
+            
+            <div class="social-links flex justify-center gap-8 mb-16" data-aos="fade-up">
+                <a href="https://web.facebook.com/profile.php?id=100082324175301&sk" class="w-16 h-16 glass-ios flex items-center justify-center text-2xl hover:text-blue-500 transition-all duration-500 hover:scale-125"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="w-16 h-16 glass-ios flex items-center justify-center text-2xl hover:text-blue-400 transition-all duration-500 hover:scale-125"><i class="fab fa-github"></i></a>
+                <a href="#" class="w-16 h-16 glass-ios flex items-center justify-center text-2xl hover:text-blue-700 transition-all duration-500 hover:scale-125"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="w-16 h-16 glass-ios flex items-center justify-center text-2xl hover:text-red-500 transition-all duration-500 hover:scale-125"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6" data-aos="fade-up">
+                <input type="hidden" name="access_key" value="0a8a7b9e-e79b-4d38-813c-b46f3c294e2b">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" name="name" placeholder="Your Name" required class="w-full glass-ios p-6 outline-none focus:border-blue-500 transition font-bold bg-transparent">
+                    <input type="email" name="email" placeholder="Your Email" required class="w-full glass-ios p-6 outline-none focus:border-blue-500 transition font-bold bg-transparent">
+                </div>
+                <textarea name="message" placeholder="Tell me about your project..." rows="6" required class="w-full glass-ios p-6 outline-none focus:border-blue-500 transition font-bold bg-transparent"></textarea>
+                <button type="submit" class="w-full bg-white text-black py-6 rounded-full font-black text-xs uppercase tracking-[0.5em] hover:bg-blue-600 hover:text-white transition-all duration-700">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center border-t border-white/5 text-[9px] font-black uppercase tracking-[0.8em] text-zinc-800">
+        &copy; 2026 Kanishka Madushan | Crafted For Excellence
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1200, once: false });
+
+        // Mouse Background Glow Interaction
+        window.addEventListener('mousemove', (e) => {
+            const glow = document.querySelector('.bg-glow');
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            glow.style.setProperty('--x', x + '%');
+            glow.style.setProperty('--y', y + '%');
+        });
+    </script>
+</body>
+</html>
