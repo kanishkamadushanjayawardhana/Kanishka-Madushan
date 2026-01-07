@@ -9,122 +9,166 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+        
         body { background-color: #050505; color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
-        .glass-ios { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 30px; }
+        
+        /* අති නවීන Glass Effect එක */
+        .glass-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 30px; }
+        
+        /* Gradient Text Animation */
         .blue-glow-text { background: linear-gradient(90deg, #00d4ff, #0070f3, #7000ff, #00d4ff); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 3s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
+        
+        /* Mouse Glow Effect */
         .bg-glow { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(0, 112, 243, 0.15) 0%, transparent 50%); pointer-events: none; z-index: -1; }
-        #mobile-menu { transition: all 0.5s ease-in-out; transform: translateY(-150%); opacity: 0; }
-        #mobile-menu.active { transform: translateY(0); opacity: 1; }
+        
+        /* Mobile Menu */
+        #mobile-menu { transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); transform: translateX(100%); }
+        #mobile-menu.active { transform: translateX(0); }
     </style>
 </head>
 <body>
     <div class="bg-glow"></div>
 
     <header class="fixed w-full z-[100] top-6 px-4 md:px-10">
-        <nav class="max-w-7xl mx-auto glass-ios px-6 md:px-10 py-6 flex justify-between items-center border-white/5 shadow-2xl">
-            <div class="text-2xl font-black tracking-tighter blue-glow-text">MADUSHAN.</div>
+        <nav class="max-w-7xl mx-auto glass-card px-6 md:px-10 py-5 flex justify-between items-center border-white/5">
+            <div class="text-2xl font-black tracking-tighter blue-glow-text uppercase">Madushan.</div>
+            
             <div class="hidden md:flex gap-10 text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-500">
                 <a href="#home" class="hover:text-white transition-all">Home</a>
                 <a href="#about" class="hover:text-white transition-all">About</a>
+                <a href="#services" class="hover:text-white transition-all">Services</a>
                 <a href="#projects" class="hover:text-white transition-all">Projects</a>
                 <a href="#tuition" class="hover:text-white transition-all">Tuition</a>
                 <a href="#contact" class="hover:text-white transition-all">Contact</a>
             </div>
+
             <button onclick="toggleMenu()" class="md:hidden text-white"><i class="fas fa-bars text-xl" id="menu-icon"></i></button>
         </nav>
-        <div id="mobile-menu" class="fixed inset-x-4 top-24 glass-ios p-10 flex flex-col gap-8 text-center border-white/10 md:hidden z-[101]">
-            <a href="#home" onclick="toggleMenu()" class="text-xs uppercase font-bold tracking-widest">Home</a>
-            <a href="#about" onclick="toggleMenu()" class="text-xs uppercase font-bold tracking-widest">About</a>
-            <a href="#projects" onclick="toggleMenu()" class="text-xs uppercase font-bold tracking-widest">Projects</a>
-            <a href="#tuition" onclick="toggleMenu()" class="text-xs uppercase font-bold tracking-widest">Tuition</a>
-            <a href="#contact" onclick="toggleMenu()" class="text-xs uppercase font-bold tracking-widest">Contact</a>
-        </div>
     </header>
 
+    <div id="mobile-menu" class="fixed inset-0 z-[150] bg-black/95 flex flex-col items-center justify-center gap-8 md:hidden">
+        <button onclick="toggleMenu()" class="absolute top-10 right-10 text-3xl text-white">&times;</button>
+        <a href="#home" onclick="toggleMenu()" class="text-2xl font-bold uppercase tracking-widest">Home</a>
+        <a href="#about" onclick="toggleMenu()" class="text-2xl font-bold uppercase tracking-widest">About</a>
+        <a href="#services" onclick="toggleMenu()" class="text-2xl font-bold uppercase tracking-widest">Services</a>
+        <a href="#projects" onclick="toggleMenu()" class="text-2xl font-bold uppercase tracking-widest">Projects</a>
+        <a href="#tuition" onclick="toggleMenu()" class="text-2xl font-bold uppercase tracking-widest">Tuition</a>
+        <a href="#contact" onclick="toggleMenu()" class="text-2xl font-bold uppercase tracking-widest">Contact</a>
+    </div>
+
     <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6">
-        <div class="mb-6 px-4 py-2 glass-ios text-[10px] font-bold tracking-[0.4em] text-blue-400 uppercase" data-aos="fade-down">Expert Software Engineer</div>
+        <div class="mb-6 px-4 py-2 glass-card text-[10px] font-bold tracking-[0.4em] text-blue-400 uppercase" data-aos="fade-down">Innovative Developer</div>
         <h1 class="text-6xl md:text-[130px] font-black mb-8 leading-none tracking-tighter" data-aos="zoom-out">Kanishka <br><span class="blue-glow-text italic">Madushan</span></h1>
-        <p class="max-w-2xl text-zinc-500 text-lg md:text-xl font-light italic" data-aos="fade-up">Building digital products, brands, and experience.</p>
+        <p class="max-w-2xl text-zinc-500 text-lg md:text-xl font-light italic mb-10" data-aos="fade-up">Building high-end web, mobile, and software solutions with precision.</p>
+        <a href="#contact" class="px-12 py-5 bg-white text-black rounded-full font-bold uppercase text-[10px] tracking-widest hover:bg-blue-600 hover:text-white transition-all shadow-2xl" data-aos="fade-up" data-aos-delay="200">Get In Touch</a>
     </section>
 
     <section id="about" class="py-40 px-6">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div data-aos="fade-right">
-                <img src="my%20pic/Profile.jpg" class="rounded-[40px] glass-ios border-white/5 grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl h-[400px] md:h-[600px] w-full object-cover">
+                <img src="my%20pic/Profile.jpg" class="rounded-[40px] glass-card border-white/5 grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl h-[400px] md:h-[600px] w-full object-cover">
             </div>
             <div data-aos="fade-left">
-                <h2 class="text-5xl md:text-7xl font-black mb-8 italic leading-none">Who is <span class="blue-glow-text">Madushan?</span></h2>
-                <p class="text-zinc-400 text-xl leading-relaxed mb-10 font-light italic">I am Kanishka Madushan, a professional Software Developer and ICT Educator with 5 years of industry experience. I specialize in crafting high-end Digital Experiences.</p>
+                <h2 class="text-5xl md:text-7xl font-black mb-8 italic leading-none tracking-tighter">Who is <span class="blue-glow-text">Madushan?</span></h2>
+                <p class="text-zinc-400 text-xl leading-relaxed mb-10 font-light italic">I am Kanishka Madushan, a professional Software Developer and ICT Educator with 5 years of experience. I bridge the gap between complex technology and elegant design.</p>
                 <div class="grid grid-cols-2 gap-6">
-                    <div class="p-8 glass-ios"><h4 class="text-4xl font-black blue-glow-text">05</h4><p class="text-[10px] text-zinc-500 uppercase tracking-widest mt-2">Years Exp</p></div>
-                    <div class="p-8 glass-ios"><h4 class="text-4xl font-black blue-glow-text">21</h4><p class="text-[10px] text-zinc-500 uppercase tracking-widest mt-2">Age</p></div>
+                    <div class="p-8 glass-card border-white/10 hover:border-blue-500 transition-all text-center">
+                        <h4 class="text-4xl font-black blue-glow-text">05+</h4>
+                        <p class="text-[10px] text-zinc-500 uppercase tracking-widest mt-2 font-bold">Years Experience</p>
+                    </div>
+                    <div class="p-8 glass-card border-white/10 hover:border-blue-500 transition-all text-center">
+                        <h4 class="text-4xl font-black blue-glow-text">50+</h4>
+                        <p class="text-[10px] text-zinc-500 uppercase tracking-widest mt-2 font-bold">Projects Done</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-40 px-6 bg-[#020202]">
+    <section id="services" class="py-40 px-6 bg-[#020202]">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-5xl md:text-7xl font-black mb-20 italic text-center tracking-tighter">Featured <span class="blue-glow-text">Projects</span></h2>
+            <h2 class="text-5xl md:text-7xl font-black mb-20 italic text-center tracking-tighter">My <span class="blue-glow-text">Expertise</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-12 glass-card border-white/5 group hover:border-blue-500 transition-all" data-aos="fade-up">
+                    <i class="fas fa-laptop-code text-5xl mb-6 text-blue-500 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-2xl font-bold mb-4">Web Development</h3>
+                    <p class="text-zinc-500 text-sm italic">Scalable, responsive, and blazing-fast web applications.</p>
+                </div>
+                <div class="p-12 glass-card border-white/5 group hover:border-blue-500 transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-mobile-alt text-5xl mb-6 text-blue-500 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-2xl font-bold mb-4">Mobile Apps</h3>
+                    <p class="text-zinc-500 text-sm italic">Native Android & iOS experiences with Flutter & React Native.</p>
+                </div>
+                <div class="p-12 glass-card border-white/5 group hover:border-blue-500 transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-brain text-5xl mb-6 text-blue-500 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-2xl font-bold mb-4">ICT Education</h3>
+                    <p class="text-zinc-500 text-sm italic">Sharing modern tech knowledge with the next generation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-40 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl md:text-7xl font-black mb-20 italic text-center tracking-tighter">Latest <span class="blue-glow-text">Work</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="glass-ios overflow-hidden group" data-aos="fade-up">
-                    <div class="h-80 bg-zinc-900 flex items-center justify-center">
-                        <i class="fas fa-laptop-code text-6xl text-zinc-800"></i>
+                <div class="glass-card overflow-hidden group shadow-2xl" data-aos="fade-right">
+                    <div class="h-64 bg-zinc-900 flex items-center justify-center group-hover:bg-zinc-800 transition-all">
+                        <i class="fas fa-store text-7xl text-zinc-800 group-hover:text-blue-500 transition-all"></i>
                     </div>
                     <div class="p-10">
-                        <h3 class="text-2xl font-bold mb-2 uppercase tracking-tighter">E-Commerce System</h3>
-                        <p class="text-zinc-500 text-sm">Full-stack online shopping platform.</p>
+                        <span class="text-[10px] text-blue-400 font-bold tracking-widest uppercase">Web Application</span>
+                        <h3 class="text-2xl font-bold mt-2 uppercase tracking-tighter">E-Commerce Platform</h3>
                     </div>
                 </div>
-                <div class="glass-ios overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-80 bg-zinc-900 flex items-center justify-center">
-                        <i class="fas fa-mobile-alt text-6xl text-zinc-800"></i>
+                <div class="glass-card overflow-hidden group shadow-2xl" data-aos="fade-left">
+                    <div class="h-64 bg-zinc-900 flex items-center justify-center group-hover:bg-zinc-800 transition-all">
+                        <i class="fas fa-tasks text-7xl text-zinc-800 group-hover:text-blue-500 transition-all"></i>
                     </div>
                     <div class="p-10">
-                        <h3 class="text-2xl font-bold mb-2 uppercase tracking-tighter">School Management App</h3>
-                        <p class="text-zinc-500 text-sm">Efficient student & teacher management.</p>
+                        <span class="text-[10px] text-blue-400 font-bold tracking-widest uppercase">Software Solution</span>
+                        <h3 class="text-2xl font-bold mt-2 uppercase tracking-tighter">School ERP System</h3>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="tuition" class="py-40 px-6">
-        <div class="max-w-4xl mx-auto text-center glass-ios p-10 md:p-20 border-white/10">
+    <section id="tuition" class="py-40 px-6 bg-zinc-950/50">
+        <div class="max-w-4xl mx-auto text-center glass-card p-10 md:p-20 border-white/10 shadow-3xl">
             <h2 class="text-5xl md:text-7xl font-black mb-16 italic tracking-tighter">ICT <span class="blue-glow-text">2026</span></h2>
             <form action="https://api.web3forms.com/submit" method="POST" class="space-y-8 text-left">
                 <input type="hidden" name="access_key" value="0a8a7b9e-e79b-4d38-813c-b46f3c294e2b">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <input type="text" name="name" placeholder="Student Name" required class="w-full glass-ios p-6 outline-none bg-transparent border-white/10 focus:border-blue-500">
-                    <input type="text" name="grade" placeholder="Grade" required class="w-full glass-ios p-6 outline-none bg-transparent border-white/10 focus:border-blue-500">
+                    <input type="text" name="name" placeholder="Full Name" required class="w-full glass-card p-6 outline-none bg-transparent border-white/10 focus:border-blue-500 transition-all">
+                    <input type="text" name="grade" placeholder="Current Grade" required class="w-full glass-card p-6 outline-none bg-transparent border-white/10 focus:border-blue-500 transition-all">
                 </div>
-                <input type="tel" name="phone" placeholder="WhatsApp Number" required class="w-full glass-ios p-6 outline-none bg-transparent border-white/10 focus:border-blue-500">
-                <button type="submit" class="w-full bg-white text-black py-8 rounded-full font-black uppercase text-[12px] tracking-[0.3em] hover:bg-blue-600 hover:text-white transition-all">Confirm Registration</button>
+                <input type="tel" name="phone" placeholder="WhatsApp Number" required class="w-full glass-card p-6 outline-none bg-transparent border-white/10 focus:border-blue-500 transition-all">
+                <button type="submit" class="w-full bg-white text-black py-8 rounded-full font-black uppercase text-[12px] tracking-[0.3em] hover:bg-blue-600 hover:text-white transition-all shadow-xl">Register Now</button>
             </form>
         </div>
     </section>
 
     <footer id="contact" class="py-40 text-center px-6">
-        <h2 class="text-5xl font-black mb-20 italic">Contact <span class="blue-glow-text">Me.</span></h2>
+        <h2 class="text-5xl font-black mb-20 italic">Get In <span class="blue-glow-text">Touch.</span></h2>
         <div class="flex justify-center gap-12 text-3xl mb-20">
-            <a href="#" class="text-zinc-500 hover:text-white transition-all"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" class="text-zinc-500 hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-zinc-500 hover:text-white transition-all"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/yournumber" class="text-zinc-500 hover:text-white transition-all transform hover:scale-125"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="text-zinc-500 hover:text-white transition-all transform hover:scale-125"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-zinc-500 hover:text-white transition-all transform hover:scale-125"><i class="fab fa-linkedin-in"></i></a>
         </div>
-        <p class="text-[10px] text-zinc-700 uppercase tracking-[0.5em]">© 2026 Kanishka Madushan • All Rights Reserved</p>
+        <p class="text-[10px] text-zinc-700 uppercase font-bold tracking-[0.5em]">© 2026 Kanishka Madushan • Modern Portfolio</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1500, once: true });
+        AOS.init({ duration: 1200, once: true });
+        
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
             menu.classList.toggle('active');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
         }
+
         window.addEventListener('mousemove', (e) => {
             const glow = document.querySelector('.bg-glow');
             glow.style.setProperty('--x', (e.clientX / window.innerWidth) * 100 + '%');
