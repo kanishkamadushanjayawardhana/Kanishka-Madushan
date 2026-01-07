@@ -9,17 +9,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
-        
         body { background-color: #050505; color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
-        
-        .glass-ios { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 30px; }
-        .glow-text { background: linear-gradient(90deg, #fff, #888, #fff); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; }
+        .glass-ios { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 30px; }
         .blue-glow-text { background: linear-gradient(90deg, #00d4ff, #0070f3, #7000ff, #00d4ff); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 3s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
-        
         .bg-glow { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(0, 112, 243, 0.15) 0%, transparent 50%); pointer-events: none; z-index: -1; }
-        
-        #mobile-menu { transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); transform: translateY(-150%); opacity: 0; }
+        #mobile-menu { transition: all 0.5s ease-in-out; transform: translateY(-150%); opacity: 0; }
         #mobile-menu.active { transform: translateY(0); opacity: 1; }
     </style>
 </head>
@@ -29,31 +24,28 @@
     <header class="fixed w-full z-[100] top-6 px-4 md:px-10">
         <nav class="max-w-7xl mx-auto glass-ios px-6 md:px-10 py-6 flex justify-between items-center border-white/5 shadow-2xl">
             <div class="text-2xl font-black tracking-tighter blue-glow-text">MADUSHAN.</div>
-            
             <div class="hidden md:flex gap-10 text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-500">
                 <a href="#home" class="hover:text-white transition-all">Home</a>
                 <a href="#about" class="hover:text-white transition-all">About</a>
-                <a href="#services" class="hover:text-white transition-all">Services</a>
+                <a href="#projects" class="hover:text-white transition-all">Projects</a>
                 <a href="#tuition" class="hover:text-white transition-all">Tuition</a>
                 <a href="#contact" class="hover:text-white transition-all">Contact</a>
             </div>
-
             <button onclick="toggleMenu()" class="md:hidden text-white"><i class="fas fa-bars text-xl" id="menu-icon"></i></button>
         </nav>
-
-        <div id="mobile-menu" class="fixed inset-x-4 top-24 glass-ios p-12 flex flex-col gap-8 text-center border-white/10 md:hidden">
-            <a href="#home" onclick="toggleMenu()" class="text-[10px] uppercase font-bold tracking-widest text-zinc-400">Home</a>
-            <a href="#about" onclick="toggleMenu()" class="text-[10px] uppercase font-bold tracking-widest text-zinc-400">About</a>
-            <a href="#services" onclick="toggleMenu()" class="text-[10px] uppercase font-bold tracking-widest text-zinc-400">Services</a>
-            <a href="#tuition" onclick="toggleMenu()" class="text-[10px] uppercase font-bold tracking-widest text-zinc-400">Tuition</a>
-            <a href="#contact" onclick="toggleMenu()" class="text-[10px] uppercase font-bold tracking-widest text-zinc-400">Contact</a>
+        <div id="mobile-menu" class="fixed inset-x-4 top-24 glass-ios p-10 flex flex-col gap-8 text-center border-white/10 md:hidden z-[101]">
+            <a href="#home" onclick="toggleMenu()" class="text-xs uppercase font-bold tracking-widest">Home</a>
+            <a href="#about" onclick="toggleMenu()" class="text-xs uppercase font-bold tracking-widest">About</a>
+            <a href="#projects" onclick="toggleMenu()" class="text-xs uppercase font-bold tracking-widest">Projects</a>
+            <a href="#tuition" onclick="toggleMenu()" class="text-xs uppercase font-bold tracking-widest">Tuition</a>
+            <a href="#contact" onclick="toggleMenu()" class="text-xs uppercase font-bold tracking-widest">Contact</a>
         </div>
     </header>
 
     <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6">
-        <div class="mb-6 px-4 py-2 glass-ios text-[10px] font-bold tracking-[0.4em] text-blue-400 uppercase" data-aos="fade-down">Innovative Digital Solutions</div>
+        <div class="mb-6 px-4 py-2 glass-ios text-[10px] font-bold tracking-[0.4em] text-blue-400 uppercase" data-aos="fade-down">Expert Software Engineer</div>
         <h1 class="text-6xl md:text-[130px] font-black mb-8 leading-none tracking-tighter" data-aos="zoom-out">Kanishka <br><span class="blue-glow-text italic">Madushan</span></h1>
-        <p class="max-w-2xl text-zinc-500 text-lg md:text-xl font-light mb-12 italic" data-aos="fade-up">Full-Stack Expert | ICT Educator | UI/UX Designer</p>
+        <p class="max-w-2xl text-zinc-500 text-lg md:text-xl font-light italic" data-aos="fade-up">Building digital products, brands, and experience.</p>
     </section>
 
     <section id="about" class="py-40 px-6">
@@ -62,10 +54,8 @@
                 <img src="my%20pic/Profile.jpg" class="rounded-[40px] glass-ios border-white/5 grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl h-[400px] md:h-[600px] w-full object-cover">
             </div>
             <div data-aos="fade-left">
-                <h2 class="text-5xl md:text-7xl font-black mb-8 italic leading-none tracking-tighter">Who is <span class="blue-glow-text">Madushan?</span></h2>
-                <p class="text-zinc-400 text-xl leading-relaxed mb-10 font-light italic text-justify">
-                    I am Kanishka Madushan, a professional Software Developer and ICT Educator with 5 years of industry experience. I specialize in crafting high-end Digital Experiences that merge aesthetics with functionality.
-                </p>
+                <h2 class="text-5xl md:text-7xl font-black mb-8 italic leading-none">Who is <span class="blue-glow-text">Madushan?</span></h2>
+                <p class="text-zinc-400 text-xl leading-relaxed mb-10 font-light italic">I am Kanishka Madushan, a professional Software Developer and ICT Educator with 5 years of industry experience. I specialize in crafting high-end Digital Experiences.</p>
                 <div class="grid grid-cols-2 gap-6">
                     <div class="p-8 glass-ios"><h4 class="text-4xl font-black blue-glow-text">05</h4><p class="text-[10px] text-zinc-500 uppercase tracking-widest mt-2">Years Exp</p></div>
                     <div class="p-8 glass-ios"><h4 class="text-4xl font-black blue-glow-text">21</h4><p class="text-[10px] text-zinc-500 uppercase tracking-widest mt-2">Age</p></div>
@@ -74,5 +64,72 @@
         </div>
     </section>
 
-    <section id="services" class="py-40 px-6 bg-[#020202]">
-        <div class="max-w-6xl
+    <section id="projects" class="py-40 px-6 bg-[#020202]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl md:text-7xl font-black mb-20 italic text-center tracking-tighter">Featured <span class="blue-glow-text">Projects</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="glass-ios overflow-hidden group" data-aos="fade-up">
+                    <div class="h-80 bg-zinc-900 flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-6xl text-zinc-800"></i>
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-2xl font-bold mb-2 uppercase tracking-tighter">E-Commerce System</h3>
+                        <p class="text-zinc-500 text-sm">Full-stack online shopping platform.</p>
+                    </div>
+                </div>
+                <div class="glass-ios overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-80 bg-zinc-900 flex items-center justify-center">
+                        <i class="fas fa-mobile-alt text-6xl text-zinc-800"></i>
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-2xl font-bold mb-2 uppercase tracking-tighter">School Management App</h3>
+                        <p class="text-zinc-500 text-sm">Efficient student & teacher management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tuition" class="py-40 px-6">
+        <div class="max-w-4xl mx-auto text-center glass-ios p-10 md:p-20 border-white/10">
+            <h2 class="text-5xl md:text-7xl font-black mb-16 italic tracking-tighter">ICT <span class="blue-glow-text">2026</span></h2>
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-8 text-left">
+                <input type="hidden" name="access_key" value="0a8a7b9e-e79b-4d38-813c-b46f3c294e2b">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <input type="text" name="name" placeholder="Student Name" required class="w-full glass-ios p-6 outline-none bg-transparent border-white/10 focus:border-blue-500">
+                    <input type="text" name="grade" placeholder="Grade" required class="w-full glass-ios p-6 outline-none bg-transparent border-white/10 focus:border-blue-500">
+                </div>
+                <input type="tel" name="phone" placeholder="WhatsApp Number" required class="w-full glass-ios p-6 outline-none bg-transparent border-white/10 focus:border-blue-500">
+                <button type="submit" class="w-full bg-white text-black py-8 rounded-full font-black uppercase text-[12px] tracking-[0.3em] hover:bg-blue-600 hover:text-white transition-all">Confirm Registration</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-40 text-center px-6">
+        <h2 class="text-5xl font-black mb-20 italic">Contact <span class="blue-glow-text">Me.</span></h2>
+        <div class="flex justify-center gap-12 text-3xl mb-20">
+            <a href="#" class="text-zinc-500 hover:text-white transition-all"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="text-zinc-500 hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-zinc-500 hover:text-white transition-all"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="text-[10px] text-zinc-700 uppercase tracking-[0.5em]">© 2026 Kanishka Madushan • All Rights Reserved</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1500, once: true });
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('active');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        }
+        window.addEventListener('mousemove', (e) => {
+            const glow = document.querySelector('.bg-glow');
+            glow.style.setProperty('--x', (e.clientX / window.innerWidth) * 100 + '%');
+            glow.style.setProperty('--y', (e.clientY / window.innerHeight) * 100 + '%');
+        });
+    </script>
+</body>
+</html>
